@@ -1,0 +1,104 @@
+body {
+    counter-reset: init;
+    .process {
+		h3 {
+			margin:0;
+		}
+		position: relative;
+		z-index: 1;
+		border-radius: 0rem 1rem 1rem 0rem;
+		margin-right: 1%;
+		background-color: #ededed;
+        ol {
+            text-align: center;
+            text-align: -webkit-center;
+            display: flex;
+            flex-direction: row;
+            padding-left: 0;
+            margin-left: 0;
+
+            li {
+                
+                position: relative;
+                list-style-type: none;
+                font-weight: bold;
+                margin-left: 1rem;
+                margin-right: 1rem;
+                &::before {
+                    counter-increment: init;
+                    content: counter(init);
+                    border-radius: 50%;
+                    border:solid 3px #7C287D;
+                    background-color: #7C287D;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    padding: .1rem .6rem .1rem .6rem;
+                    color: #fefefe; 
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    
+                }
+				&::after {
+                	content: "";
+                    bottom: 83%;
+                    left:-110%;
+                    width:155%;
+                    right: 0;
+                    height: 0.4rem;
+                    border-top: 0.3rem solid #7C287D;
+                    position: absolute;
+                    z-index: -2;
+                    filter: drop-shadow(0px 3px 8px rgba(0, 0,0, 0.24))
+                    }
+    
+				img {
+					display:block;
+					max-width:2rem;
+					width: 100%;
+					height: auto;
+					padding-bottom:1rem;
+
+				}
+                span {
+                    position: relative;
+                    display:block;
+  					text-align: center;
+                    align-content: center;
+                    align-items: start;
+                    margin-left: 0rem;
+                    margin-top: 1rem;
+                    font-size: .7rem;
+                    align-items: start;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+	.process {
+	h2, p {
+		 text-align: center;
+	 }
+ 
+	}
+	ol {
+       display: block !important;
+        li {
+
+		  &::after {
+                    content: "";
+                    border-top: none !important;
+					left: auto !important;
+					width: auto !important;
+            }
+            span {
+				text-align:center;
+				font-size:1rem !important;
+                margin-top: .3rem !important;
+                margin-bottom: 1rem !important;
+        }
+    
+    }
+}
+}
